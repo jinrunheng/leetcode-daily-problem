@@ -4,19 +4,19 @@
 
 不使用额外的数据结构，利用快慢指针即可完成本题，具体思路如下:
 
-**1.** 快慢指针找到中点
+1. 快慢指针找到中点
 
-**2.** 翻转中点之后的链表
+2. 翻转中点之后的链表
 
-**3.** 完成实际的节点交换
-
-
-
-例如对于链表**`1 ->2 ->3 ->2 ->1`**
+3. 完成实际的节点交换
 
 
 
-*![image.png](https://pic.leetcode-cn.com/1603183609-mOQpcO-image.png)*
+例如对于链表`1 ->2 ->3 ->2 ->1`
+
+
+
+![image.png](https://pic.leetcode-cn.com/1603183609-mOQpcO-image.png)
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-*![image.png](https://pic.leetcode-cn.com/1603183660-YqkcLg-image.png)*
+![image.png](https://pic.leetcode-cn.com/1603183660-YqkcLg-image.png)
 
 
 
@@ -56,7 +56,7 @@ p3 = null; // 手动将p3置空
 
 
 
-接下来我们只需要完成实际的节点交换即可，为了防止混淆，我们再使用两个变量维护**`p1.next`**和**`p2.next`**这样思路就变得清晰很多：
+接下来我们只需要完成实际的节点交换即可，为了防止混淆，我们再使用两个变量维护`p1.next`和`p2.next`这样思路就变得清晰很多：
 
 ```java
 ListNode p1Next = null;
