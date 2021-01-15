@@ -2,15 +2,14 @@ class Solution {
     public int removeStones(int[][] stones) {
         UnionFind uf = new UnionFind();
         for(int[] stone : stones){
-            // 横坐标和纵坐标要区分开	
-            uf.union(stone[0] + 10001,stone[1]);
+            uf.union(stone[0] + 10000,stone[1]);
         }
         return stones.length - uf.getCount();
     }
 
     class UnionFind{
         private Map<Integer,Integer> map;
-        private int count;  // 联通分量的个数
+        private int count;
 
         public UnionFind(){
             map = new HashMap<>();
@@ -24,7 +23,7 @@ class Solution {
                 return i;
             }
             int root = map.get(i);
-            if(i != root){
+            if(root != i){
                 root = find(root);
             }
             map.put(i,root);
@@ -34,6 +33,7 @@ class Solution {
         public void union(int p,int q){
             int pRoot = find(p);
             int qRoot = find(q);
+
             if(pRoot != qRoot){
                 map.put(pRoot,qRoot);
                 count--;
