@@ -1,19 +1,23 @@
-## 拼接最大数
+## 移掉K位数字 & 拼接最大数
+
+[402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/)
 
 [321. 拼接最大数](https://leetcode-cn.com/problems/create-maximum-number/)
 
 #### 思路：单调栈
 
-在做这道题之前，建议先做一下：[402. 移掉K位数字](https://leetcode-cn.com/problems/remove-k-digits/)
+在做拼接最大数这道题之前，建议先做一下移掉k位数字
 
 单调栈，顾名思义，存放的数据为有序的，所以也分单调递增栈和单调递减栈
 
 - 单调递增栈：单调递增栈就是从栈底到栈顶数据是从小到大排列的
 - 单调递减栈：单调递减栈就是从栈底到栈顶数据是从大到小排列的
 
-我们先来看一下leetcode的402题，理解下单调栈
+我们先来看一下LeetCode的402题，理解下单调栈
 
-题目规定来给丁一个字符串，要求移除数中的k个数字，使得剩下的数字保持顺序的数字最小
+#### 移掉K位数字
+
+题目规定来给定一个字符串，要求移除数中的k个数字，使得剩下的保持顺序的数字最小
 
 因为我们需要删掉k位数字得到最小值，那么我们就让删除的数字尽量在高位
 
@@ -64,7 +68,7 @@ class Solution {
 
 
 
-接下来让我们回到本题：
+#### 拼接最大数
 
 本题相当于要维护两个栈，而且因为题目要求的是最大数，所以本题维护的则是单调递增栈
 
@@ -102,7 +106,11 @@ private static int[] findMaxSubsequence(int[] nums, int k) {
 }
 ```
 
-接下来的操作就是归并排序的merge操作，我们需要将两个数组组合成一个最大的数组，后面的步骤请详见我的代码。
+接下来的操作就是归并排序的`merge`操作，对归并排序还不太熟悉的小伙伴可以看下我的这篇文章：
+
+[请写出归并排序？归并排序的时间复杂度？简单说明归并排序的思路？](https://github.com/jinrunheng/cracking-java-interview/blob/main/data-structure-and-algorithm/question3_answer.md)
+
+我们需要将两个数组组合成一个最大的数组，后面的步骤请详见我的代码。
 
 #### 代码
 
